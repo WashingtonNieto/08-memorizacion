@@ -6,8 +6,8 @@ export const Empleados = React.memo(
     const [empleados, setEmpleados] = useState([]);
 
     useEffect(() => {
-      conseguirEmpleados(pagina);
-    }, [pagina]);
+      console.log("Se ha vuelto a renderizar empleado");
+    }, [empleados]);
 
     const conseguirEmpleados = async(p) => {
       const url = "https://reqres.in/api/users?page="+p;
@@ -16,6 +16,11 @@ export const Empleados = React.memo(
 
       setEmpleados(empleados);
     }
+
+    useEffect(() => {
+      conseguirEmpleados(pagina);
+    }, [pagina]);
+
 
     return (
       <div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Empleados } from './Empleados'
 
 export const Gestion = () => {
@@ -10,6 +10,9 @@ export const Gestion = () => {
     setNombre(e.target.value);
   }
 
+  useEffect(() => {
+    console.log("Vista Gestion actualizada!!")
+  }, [nombre,pagina])
 
   return (
     <div>
